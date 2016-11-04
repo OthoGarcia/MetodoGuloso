@@ -59,7 +59,7 @@ public class Pontos  extends JPanel{
         //Desenhando os vértices gerados
         for (int i=0; i<this.vertices;i++){
            g.drawOval(this.coordenadas[i][0], this.coordenadas[i][1], 10, 10);
-           g.drawString(" "+(i+1), this.coordenadas[i][0], this.coordenadas[i][1]);
+           g.drawString(" "+(i), this.coordenadas[i][0], this.coordenadas[i][1]);
         }
         
         //Desenhando uma linha interligando todos os vértices

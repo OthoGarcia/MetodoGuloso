@@ -28,6 +28,8 @@ public class CaixeiroViajanteGuloso {
         application.setSize(largura,altura);
         application.setVisible(true);
         
+        
+        
         Gulosa gulosa = new Gulosa(pt.getCustos(), pt.getCoordenadas(), 3);
         int[] rota = gulosa.getRota();
         String aux = "";
@@ -35,6 +37,13 @@ public class CaixeiroViajanteGuloso {
             aux+= "--"+rota[i];
         }
         JOptionPane.showMessageDialog(null, aux);
+        
+        Calculos cal = new Calculos(pt.getCustos(),gulosa.getRota(),pt.getCoordenadas());
+        JFrame s_gulosa = new JFrame("Metodo GUloso");
+        s_gulosa.add(cal);
+        s_gulosa.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        s_gulosa.setSize(largura,altura);
+        s_gulosa.setVisible(true);
     }
     
 }
