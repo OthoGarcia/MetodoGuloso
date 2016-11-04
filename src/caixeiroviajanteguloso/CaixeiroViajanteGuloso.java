@@ -18,13 +18,23 @@ public class CaixeiroViajanteGuloso {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Pontos panel = new Pontos(20,800,600);
+        int largura=800, altura=600;
+                
+                
+        Pontos pt = new Pontos(4,largura,altura);
         JFrame application = new JFrame("Resultado");
-        application.add(panel);
+        application.add(pt);
         application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        application.setSize(500,300);
+        application.setSize(largura,altura);
         application.setVisible(true);
         
+        Gulosa gulosa = new Gulosa(pt.getCustos(), pt.getCoordenadas(), 3);
+        int[] rota = gulosa.getRota();
+        String aux = "";
+        for (int i = 0; i < rota.length; i++) {
+            aux+= "--"+rota[i];
+        }
+        JOptionPane.showMessageDialog(null, aux);
     }
     
 }
