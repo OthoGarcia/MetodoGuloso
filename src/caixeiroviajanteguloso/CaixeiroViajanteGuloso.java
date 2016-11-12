@@ -44,6 +44,16 @@ public class CaixeiroViajanteGuloso {
         s_gulosa.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         s_gulosa.setSize(largura,altura);
         s_gulosa.setVisible(true);
+        
+        //Busca local aleatória
+        BuscaLocal bl = new BuscaLocal(3, pt.getCustos());
+        Calculos c2 = new Calculos(pt.getCustos(), bl.getRota(), pt.getCoordenadas());
+        JFrame buscaAleatoria = new JFrame("Busca local aleatória");
+        buscaAleatoria.add(c2);
+        buscaAleatoria.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        buscaAleatoria.setSize(altura,largura);
+        buscaAleatoria.setVisible(true);
+        
     }
     
 }
