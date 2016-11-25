@@ -21,7 +21,7 @@ public class CaixeiroViajanteGuloso {
         int largura=800, altura=600;
                 
                 
-        Pontos pt = new Pontos(4,largura,altura);
+        Pontos pt = new Pontos(5,largura,altura);
         JFrame application = new JFrame("Resultado");
         application.add(pt);
         application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -54,6 +54,15 @@ public class CaixeiroViajanteGuloso {
         buscaAleatoria.setSize(altura,largura);
         buscaAleatoria.setVisible(true);
         
+        
+         //API
+        API api = new API(3, pt.getCustos());
+        Calculos c3 = new Calculos(pt.getCustos(),api.getRota(),pt.getCoordenadas());
+        JFrame buscaAleatorio2 = new JFrame("API");
+        buscaAleatorio2.add(c3);
+        buscaAleatorio2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        buscaAleatorio2.setSize(largura,altura);
+        buscaAleatorio2.setVisible(true);
     }
     
 }
